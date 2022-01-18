@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,10 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnClickMe = findViewById<Button>(R.id.myButton)
-        val textView1 = findViewById<TextView>(R.id.textView)
+        val tvMyTextView = findViewById<TextView>(R.id.textView)
+        var timesCliked = 0
 
         btnClickMe.setOnClickListener{
-            textView1.text = "Haha clik"
+            timesCliked += 1
+
+            tvMyTextView.text = timesCliked.toString()
+            Toast.makeText(this, "Hey Dominik", Toast.LENGTH_LONG).show()
         }
     }
 }
