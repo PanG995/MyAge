@@ -10,5 +10,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btnDatePicker: Button =findViewById(R.id.btnDatePicker)
+
+        btnDatePicker.setOnClickListener(){
+            Toast.makeText(this, "btnDatePicker pressed",Toast.LENGTH_LONG).show()
+        }
     }
 }
